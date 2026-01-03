@@ -5,7 +5,7 @@
     
     
 from termcolor import colored
-from models import user, item, CartSys
+from models import user, CartSys
 from json_savefile import save_cart
 
 def E_cart_system():    
@@ -63,6 +63,7 @@ def E_cart_system():
             case 3:
                 if cart_obj.cart:
                     cart_obj.cart_print(user_obj.name)
+                    save_cart(cart_obj.cart)
                 else:
                     print(colored("Your cart is empty. Please Choice 1 to add Items.", "red", attrs=["bold"]))
                     continue
@@ -70,10 +71,7 @@ def E_cart_system():
                 if cart_obj.cart:
                     save_cart(cart_obj.cart)
                     print(colored("Your cart has been saved to a JSON file before exiting.", "yellow", attrs=["bold"]))
-                    
-                else:
-                    print(colored("\nExiting the E-Commerce Cart System. Thank you!", "red", attrs=["bold"]))
-                    
+                print(colored("\nExiting the E-Commerce Cart System. Thank you!", "red", attrs=["bold"]))    
                 break
                     
             case _:

@@ -9,12 +9,6 @@ class user:
         else:
             self.name = name.capitalize()
             
-class item():
-        
-    def __init__(self, item_name, quantity, price):
-        self.item_name = item_name
-        self.quantity = quantity
-        self.price = price
         
 class CartSys:
     
@@ -22,8 +16,7 @@ class CartSys:
         self.cart = []
         
     def add_item(self, item_name, quantity, price):
-        new_item = item(item_name, quantity, price)
-        self.cart.append(new_item)
+        self.cart.append([item_name, quantity, price])
         save_cart(self.cart)
         
     def total_price(self):
