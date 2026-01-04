@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![License](https://img.shields.io/badge/License-yellow?style=for-the-badge)
 
 A simple yet feature-rich command-line E-Commerce Cart System built with Python. This tool allows users to manage a virtual shopping cart, generate receipts, and save transaction history.
 
