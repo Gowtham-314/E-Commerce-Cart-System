@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 
-def save_cart(cart, username, filename=f"cart_history-{datetime.now().strftime('%d-%m-%Y')}.json"):
+def save_cart(cart, username, filename=f"Saved Files/cart_history-{datetime.now().strftime('%d-%m-%Y')}.json"):
     data = {
         "user": {
             "name": username,
