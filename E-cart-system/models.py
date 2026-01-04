@@ -43,7 +43,7 @@ class CartSys:
         
         base_dir = Path(__file__).resolve().parent
         
-        folder = base_dir / "Saved Files"
+        folder = base_dir / f"Saved Files/Printed Receipts-{datetime.now().strftime('%d-%m-%Y')}"
         folder.mkdir(parents=True, exist_ok=True)
         
         with open(folder / f"cart_details_{datetime.now().strftime('%d-%m-%Y %H-%M-%S')}.txt","w",encoding="utf-8") as f:

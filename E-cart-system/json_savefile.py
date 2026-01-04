@@ -6,7 +6,7 @@ def save_cart(cart, username):
         
     base_dir = Path(__file__).resolve().parent
         
-    folder = base_dir / "Saved Files"
+    folder = base_dir / "Saved Files/Cart History"
     folder.mkdir(parents=True, exist_ok=True)
 
     filename = folder / f"cart_history-{datetime.now().strftime('%d-%m-%Y')}.json"
