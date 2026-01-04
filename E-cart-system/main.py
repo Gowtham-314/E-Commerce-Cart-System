@@ -9,13 +9,13 @@ from models import user, CartSys,Sound
 from json_savefile import save_cart
 
 
-def E_cart_system():
+def E_NexaMart():
     
     
     cart_obj = CartSys()
     user_obj=user(input("\nEnter your Name, (Press Enter ↩ to Guest User) : "))
-    print("\n","-"*60,colored(f"\n|{" "*18}E-Commerce Cart System {" "*18}|\n", "red", attrs=["bold"]),"-"*60)
-    print("\n","-"*60,colored(f"\nWelcome to E-Commerce Cart System ⫸\n{colored(user_obj.name, 'red', attrs=['bold'])}!", "cyan", attrs=["bold"]),"\n","-"*60)
+    print("\n","-"*60,colored(f"\n|{" "*22}E-NexaMart {" "*22}|\n", "red", attrs=["bold"]),"-"*60)
+    print("\n","-"*60,colored(f"\nWelcome to E-NexaMart ⫸\n{colored(user_obj.name, 'red', attrs=['bold'])}!", "cyan", attrs=["bold"]),"\n","-"*60)
 
     while True:
         
@@ -93,4 +93,4 @@ def E_cart_system():
     
 
 if __name__ == "__main__":
-    E_cart_system()
+    E_NexaMart()

@@ -49,7 +49,7 @@ class CartSys:
         with open(folder / f"cart_details_{datetime.now().strftime('%d-%m-%Y %H-%M-%S')}.txt","w",encoding="utf-8") as f:
             
             f.write("="*35+"\n")
-            f.write(f"|{" "*8}E-COMMERCE RECEIPT{" "*7}|\n")
+            f.write(f"|{" "*10}E-NEXAMART RECEIPT{" "*7}|\n")
             f.write("="*35+"\n")
             f.write(f"Date: {datetime.now().strftime('%d-%m-%Y %H:%M:%S')}\n")
             f.write(f"User: {user_name}\n")
