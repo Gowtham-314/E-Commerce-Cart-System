@@ -1,6 +1,7 @@
 from termcolor import colored
 from datetime import datetime
 from json_savefile import save_cart
+from playsound import playsound
 
 class user:
     def __init__(self,name):
@@ -19,7 +20,7 @@ class CartSys:
         self.cart.append([item_name, quantity, price])
         
     def total_price(self):
-        total_sum = sum(item.quantity * item.price for item in self.cart)
+        total_sum = sum(item[1] * item[2] for item in self.cart)
         return total_sum
         
         
@@ -29,7 +30,7 @@ class CartSys:
         print(f"{'Product':<20} {'Qty':<5} {'Price':<10}\n","-" * 40)
         
         for item in self.cart: 
-            print(f"{item.item_name:<20} {item.quantity:<5} ₹{item.price:.2f}\n")
+            print(f"{item[0]:<20} {item[1]:<5} ₹{item[2]:.2f}\n")
             
         print("-" * 60,colored("\nCalculating the Total Price of the Items in the Cart:", "yellow"))
         print(f"\nTotal Price: ₹ {self.total_price()}\n","-"*60)
@@ -39,23 +40,24 @@ class CartSys:
         
         print("-"*60,colored("\nPrinting the Cart Details:", "magenta"))
         
-        with open(f"cart_details_{datetime.now().strftime('%Y%m%d%H%M%S')}.txt","w",encoding="utf-8") as f:
+        with open(f"cart_details_{datetime.now().strftime('%d-%m-%Y %H-%M-%S')}.txt","w",encoding="utf-8") as f:
             
             f.write("="*35+"\n")
             f.write(f"|{" "*8}E-COMMERCE RECEIPT{" "*7}|\n")
             f.write("="*35+"\n")
-            f.write(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Date: {datetime.now().strftime('%d-%m-%Y %H:%M:%S')}\n")
             f.write(f"User: {user_name}\n")
             f.write("-"*35+"\n")
             f.write(f"{'Product':<20} {'Qty':<5} {'Price':<10}\n")
             f.write("-"*35+"\n")
             
             for item in self.cart:
-                f.write(f"{item.item_name:<20} {item.quantity:<5} ₹{item.price:<10}\n")
+                f.write(f"{item[0]:<20} {item[1]:<5} ₹{item[2]:<10}\n")
             
             f.write("="*35+"\n")
             f.write(f"GRAND TOTAL:    ₹{self.total_price():.2f}\n")
             f.write("="*35)
             
+        playsound('C:\\Users\\gowda\\Downloads\\SmartConnectFiles\\success.mp3')    
         print(colored("Cart details have been printed Successfully to the file.","green"),"\n","-"*60)
         
