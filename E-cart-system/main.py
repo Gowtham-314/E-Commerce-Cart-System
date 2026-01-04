@@ -1,24 +1,16 @@
 """"<!--- E-Commerce Cart System
     This program allows users to add items to a shopping cart, view the cart contents,
-    Systemed by,
-    Kruthik BT , 
-    Gowtham Gowda  C B ,
-    Akash B V , 
-    Rohith S J
-    
+    Systemed by Kruthik BT , Gowtham Gowda  C B , Akash B V , Rohith S J
     @Coding_group--->"""
     
     
 from termcolor import colored
-from models import user, CartSys
+from models import user, CartSys,Sound
 from json_savefile import save_cart
-from playsound import playsound
-import os
 
-def E_cart_system():    
-    # Get the directory where this script is located
-    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-    AUDIO_DIR = os.path.join(SCRIPT_DIR, 'audio')
+
+def E_cart_system():
+    
     
     cart_obj = CartSys()
     user_obj=user(input("\nEnter your Name, (Press Enter ↩ to Guest User) : "))
@@ -33,11 +25,11 @@ def E_cart_system():
         try:
             choice = int(input(colored("Enter your choice: ", "cyan")))
             if not choice in [1,2,3,4]:
-                playsound(os.path.join(AUDIO_DIR, 'error.mp3'))
+                Sound('error')
                 print(colored("Invalid choice. Please try again.", "red"),"\n","-"*60)
                 continue
         except ValueError:
-            playsound(os.path.join(AUDIO_DIR, 'error.mp3'))
+            Sound('error')
             print(colored("Invalid input. Please enter a number between 1 and 4.", "red"),"\n","-"*60)
             continue
         
@@ -58,38 +50,41 @@ def E_cart_system():
                                 raise ValueError
                             
                         except ValueError:
-                            playsound(os.path.join(AUDIO_DIR, 'error.mp3'))
+                            Sound('error')
                             print(colored("Invalid item details. Quantity and price must be positive numbers. Enter in the correct format.","red"),"\n","-"*60)
                             continue
                             
                         cart_obj.add_item(items, qty, rate)
                         
-                    playsound(os.path.join(AUDIO_DIR, 'success.mp3'))      
+                    Sound('success')      
                 
                 except ValueError:
-                    playsound(os.path.join(AUDIO_DIR, 'error.mp3'))
+                    Sound('error')
                     print(colored("Invalid input. Please enter the valid number of items.", "red"),"\n","-"*60)
                     continue
                     
             case 2:
                 if cart_obj.cart:
                     cart_obj.view_cart()
+                    Sound('success')
                 else:
-                    playsound('audio/error.mp3')
+                    Sound('error')
                     print(colored("Your cart is empty. Please Choice 1 to add Items.", "red", attrs=["bold"]))
                     continue
             case 3:
                 if cart_obj.cart:
                     cart_obj.cart_print(user_obj.name)
+                    Sound('success')
+
                 else:
-                    playsound('audio/error.mp3')
+                    Sound('error')
                     print(colored("Your cart is empty. Please Choice 1 to add Items.", "red", attrs=["bold"]))
                     continue
             case 4:
                 if cart_obj.cart:
                     save_cart(cart_obj.cart, user_obj.name)
                     print(colored("Your cart has been saved to a JSON file before exiting.", "yellow", attrs=["bold"]))
-                playsound(os.path.join(AUDIO_DIR, 'success.mp3'))
+                Sound('success')
                 print(colored("\nExiting the E-Commerce Cart System. Thank you!", "red", attrs=["bold"]))    
                 break
                     
