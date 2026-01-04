@@ -17,7 +17,6 @@ class CartSys:
         
     def add_item(self, item_name, quantity, price):
         self.cart.append([item_name, quantity, price])
-        save_cart(self.cart)
         
     def total_price(self):
         total_sum = sum(item.quantity * item.price for item in self.cart)
