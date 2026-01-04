@@ -14,7 +14,3 @@ def save_cart(cart_items):
 
     with open(f"cart_history-{datetime.now().strftime('%Y-%m-%d')}.json","w") as f:
         json.dump(datetime.now().strftime('%H:%M:%S')+data, f, indent=4)
-        
-cart=[]
-save_cart(cart)
-

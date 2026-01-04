@@ -60,4 +60,3 @@ class CartSys:
             
         print(colored("Cart details have been printed Successfully to the file.","green"),"\n","-"*60)
         
-        
