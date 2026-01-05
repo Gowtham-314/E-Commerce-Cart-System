@@ -80,15 +80,15 @@ python main.py
 
 ```text
 E-Commerce-Cart-System/
-├── E-cart-system/           # Source code
-│   ├── main.py              # Entry point
-│   ├── models.py            # User, Cart, and Sound logic
-│   ├── json_savefile.py     # JSON persistence handler
-│   ├── audio/               # Sound effect files
-│   └── Saved Files/         # Output directory
-│       ├── Cart History/    # JSON history logs
-│       └── Printed Receipts/# Generated .txt receipts
-└── README.md                # Documentation
+├── E-cart-system/            # Source code
+│   ├── main.py               # Entry point
+│   ├── models.py             # User, Cart, and Sound logic
+│   ├── json_savefile.py      # JSON persistence handler
+│   ├── audio/                # Sound effect files
+│   └── Saved Files/          # Output directory
+│       ├── Cart History/     # JSON history logs
+│       └── Printed Receipts/ # Generated .txt receipts
+└── README.md                 # Documentation
 ```
 
 ---
