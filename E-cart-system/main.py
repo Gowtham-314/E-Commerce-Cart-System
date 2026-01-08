@@ -98,9 +98,9 @@ def E_NexaMart():
                     save_cart(cart_obj.cart, user_obj.name)
                     print(colored("Your cart has been saved to a JSON file before exiting.", "yellow", attrs=["bold"]))
                 Sound('success')
-                cprint("\nExiting the E-Commerce Cart System. Thank you!", "red", attrs=["bold"])
+                print("\n")
+                cprint("Exiting the E-Commerce Cart System. Thank you!", "red","on_light_red", attrs=["bold"])
                 print("\n","-"*60)
-                
                 break
                     
             case _:
