@@ -94,7 +94,6 @@ E-Commerce-Cart-System/
 ## 📂 Complete Detailed Structure
 
 ```text
-```
 E-Commerce-Cart-System/
     ├── Basic_system/
     │   ├── E-Cart-System-Main.py
