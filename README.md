@@ -1,17 +1,14 @@
 # 🛒 E-Commerce Cart System
 
-
-<div align="center">
-
 ![Python](https://img.shields.io/badge/Python-10.0+-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-yellow?style=for-the-badge)
 
-**A simple, feature-rich, and colorful command-line shopping cart experience.**
+## **A simple, feature-rich, and colorful command-line shopping cart experience.**
 
+<div align="center">
+  <img src="assets/E_Commerce_Cart_System_Visual-dark.png" alt="E-Commerce Cart System Visual">
 </div>
-
----
 
 ## 📝 Overview
 
@@ -102,8 +99,11 @@ Developed with ❤️ by **Coding Group**:
 - **Gowtham Gowda C B**
 - **Akash B V**
 - **Rohith S J**
-
 ---
+
+<div align="center">
+  <img src="assets/E_Commerce_Cart_System_Visual-light.png" alt="E-Commerce Cart System Visual">
+</div>
 
 <div align="center">
   <p>If you find this project useful, please give it a ⭐!</p>
