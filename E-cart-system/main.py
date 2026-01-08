@@ -4,7 +4,7 @@
     @Coding_group--->"""
     
     
-from termcolor import colored
+from termcolor import colored,cprint
 from models import user, CartSys,Sound
 from history_json import save_cart
 
@@ -14,23 +14,25 @@ def E_NexaMart():
     
     cart_obj = CartSys()
     user_obj=user(input("\nEnter your Name, (Press Enter ↩ to Guest User) : "))
-    print("\n","-"*60,colored(f"\n|{" "*22}E-NexaMart {" "*22}|\n", "red", attrs=["bold"]),"-"*60)
+    print("\n","-"*60,colored(f"\n|{" "*22}{colored('E-NexaMart', "red", attrs=['bold', 'underline'])}{" "*22}|\n", "red", attrs=["bold"]),"-"*60)
     print("\n","-"*60,colored(f"\nWelcome to E-NexaMart ⫸\n{colored(user_obj.name, 'red', attrs=['bold'])}!", "cyan", attrs=["bold"]),"\n","-"*60)
 
     while True:
         
-        print(colored("\nChoice the Actions to perform:", "green", attrs=["bold"]))
+        print(colored("\nChoice the Actions to perform:", "green", attrs=["bold","underline"]))
         print(colored('''1. Add Item to Cart\n2. View Cart Items\n3. Print Cart Details\n4. Exit''', "green"))
         
         try:
             choice = int(input(colored("Enter your choice: ", "cyan")))
             if not choice in [1,2,3,4]:
                 Sound('error')
-                print(colored("Invalid choice. Please try again.", "red"),"\n","-"*60)
+                cprint("Invalid choice. Please try again.", "red","on_light_red", attrs=["bold"])
+                print("\n","-"*60)
                 continue
         except ValueError:
             Sound('error')
-            print(colored("Invalid input. Please enter a number between 1 and 4.", "red"),"\n","-"*60)
+            cprint("Invalid input. Please enter a number between 1 and 4.", "red","on_light_red", attrs=["bold"])
+            print("\n","-"*60)
             continue
         
         
@@ -38,9 +40,12 @@ def E_NexaMart():
             
             case 1:
             
+                had_error = False
                 try:
                     no_items = int(input(colored("\nEnter the No. of items to add: ", "light_blue")))
-                    raise ValueError if no_items <= 0 else None
+                    
+                    if no_items <= 0:
+                        raise ValueError
                 
                     for _ in range(no_items):
                         try:
@@ -52,26 +57,31 @@ def E_NexaMart():
                                 raise ValueError
                             
                         except ValueError:
+                            had_error = True
                             Sound('error')
-                            print(colored("Invalid item details. Quantity and price must be positive numbers. Enter in the correct format.","red"),"\n","-"*60)
-                            continue
+                            cprint("Invalid item details. Quantity and price must be positive numbers. Enter in the correct format.","red","on_light_red", attrs=["bold"])
+                            print("\n","-"*60)
+                            break
                             
-                        cart_obj.add_item(items, qty, rate)
-                    else:    
-                        Sound('success')      
+                        cart_obj.add_item(items, qty, rate)     
                 
                 except ValueError:
                     Sound('error')
-                    print(colored("Invalid input. Please enter the valid positive number of items.", "red"),"\n","-"*60)
+                    cprint("Invalid input. Please enter the valid positive number of items.", "red","on_light_red", attrs=["bold"])
+                    print("\n","-"*60)
                     continue
-                    
+                
+                if not had_error:
+                    Sound('success')  
+                                      
             case 2:
                 if cart_obj.cart:
                     cart_obj.view_cart()
                     Sound('success')
                 else:
                     Sound('error')
-                    print(colored("Your cart is empty. Please Choice 1 to add Items.", "red", attrs=["bold"]))
+                    cprint("Your cart is empty. Please Choice 1 to add Items.", "red","on_light_red", attrs=["bold"])
+                    print("\n","-"*60)
                     continue
             case 3:
                 if cart_obj.cart:
@@ -80,18 +90,22 @@ def E_NexaMart():
 
                 else:
                     Sound('error')
-                    print(colored("Your cart is empty. Please Choice 1 to add Items.", "red", attrs=["bold"]))
+                    cprint("Your cart is empty. Please Choice 1 to add Items.", "red","on_light_red", attrs=["bold"])
+                    print("\n","-"*60)
                     continue
             case 4:
                 if cart_obj.cart:
                     save_cart(cart_obj.cart, user_obj.name)
                     print(colored("Your cart has been saved to a JSON file before exiting.", "yellow", attrs=["bold"]))
                 Sound('success')
-                print(colored("\nExiting the E-Commerce Cart System. Thank you!", "red", attrs=["bold"]))    
+                cprint("\nExiting the E-Commerce Cart System. Thank you!", "red", attrs=["bold"])
+                print("\n","-"*60)
+                
                 break
                     
             case _:
-                print(colored("Invalid choice. Please try again.", "red"),"\n","-"*60)
+                cprint("Invalid choice. Please try again.", "red","on_light_red", attrs=["bold"])
+                print("\n","-"*60)
     
 
 if __name__ == "__main__":
