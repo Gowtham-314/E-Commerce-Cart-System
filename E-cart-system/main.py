@@ -40,6 +40,8 @@ def E_NexaMart():
             
                 try:
                     no_items = int(input(colored("\nEnter the No. of items to add: ", "light_blue")))
+                    raise ValueError if no_items <= 0 else None
+                
                     for _ in range(no_items):
                         try:
                             items, qty, rate = input(colored("Enter item Name, Quantity and Price (Separated by Commas): ", "light_blue")).split(',')
@@ -55,12 +57,12 @@ def E_NexaMart():
                             continue
                             
                         cart_obj.add_item(items, qty, rate)
-                        
-                    Sound('success')      
+                    else:    
+                        Sound('success')      
                 
                 except ValueError:
                     Sound('error')
-                    print(colored("Invalid input. Please enter the valid number of items.", "red"),"\n","-"*60)
+                    print(colored("Invalid input. Please enter the valid positive number of items.", "red"),"\n","-"*60)
                     continue
                     
             case 2:
