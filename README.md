@@ -88,6 +88,36 @@ E-Commerce-Cart-System/
 │       └── Printed Receipts/ # Generated .txt receipts
 └── README.md                 # Documentation
 ```
+## 📂 Complete Detailed Structure
+
+```text
+E-Commerce-Cart-System/
+    ├── Basic_system/
+    │   ├── E-Cart-System-Main.py
+    │   ├── Project_Report.pdf
+    │   ├── Version 1.0.0.py
+    │   ├── Version 2.0.0.py
+    ├── E-cart-system/
+    │   ├── audio/
+    │   │   ├── error.mp3
+    │   │   ├── success.mp3
+    │   ├── Saved Files/
+    │   │   ├── Cart History/
+    │   │   │   ├── cart_history-04-01-2026.json
+    │   │   │   ├── cart_history-05-01-2026.json
+    │   │   ├── Printed Receipts-04-01-2026/
+    │   │   │   ├── cart_details_04-01-2026 23-17-53.txt
+    │   │   │   ├── cart_details_04-01-2026 23-19-00.txt
+    │   │   │   ├── cart_details_04-01-2026 23-24-11.txt
+    │   │   │   ├── cart_details_04-01-2026 23-27-16.txt
+    │   │   └── Printed Receipts-05-01-2026/
+    │   │       └── cart_details_05-01-2026 01-58-05.txt
+    │   ├── history_json.py
+    │   ├── main.py
+    │   └── models.py
+    ├── Project_Report.pdf
+    └── README.md
+```
 
 ---
 
