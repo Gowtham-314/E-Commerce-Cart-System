@@ -39,10 +39,10 @@ def E_NexaMart():
             case 1:
             
                 try:
-                    no_items = int(input("\nEnter the No. of items to add: "))
+                    no_items = int(input(colored("\nEnter the No. of items to add: ", "light_blue")))
                     for _ in range(no_items):
                         try:
-                            items, qty, rate = input("Enter item Name, Quantity and Price (Separated by Commas): ").split(',')
+                            items, qty, rate = input(colored("Enter item Name, Quantity and Price (Separated by Commas): ", "light_blue")).split(',')
                             qty = int(qty)
                             rate = float(rate)
 
