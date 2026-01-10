@@ -26,12 +26,12 @@ def E_NexaMart():
             choice = int(input(colored("Enter your choice: ", "cyan")))
             if not choice in [1,2,3,4]:
                 Sound('error')
-                cprint("Invalid choice. Please try again.", "red","on_light_red", attrs=["bold"])
+                cprint("Invalid choice. Please try again.", "white","on_light_red", attrs=["bold"])
                 print("\n","-"*60)
                 continue
         except ValueError:
             Sound('error')
-            cprint("Invalid input. Please enter a number between 1 and 4.", "red","on_light_red", attrs=["bold"])
+            cprint("Invalid input. Please enter a number between 1 and 4.", "white","on_light_red", attrs=["bold"])
             print("\n","-"*60)
             continue
         
@@ -59,7 +59,7 @@ def E_NexaMart():
                         except ValueError:
                             had_error = True
                             Sound('error')
-                            cprint("Invalid item details. Quantity and price must be positive numbers. Enter in the correct format.","red","on_light_red", attrs=["bold"])
+                            cprint("Invalid item details. Quantity and price must be positive numbers. Enter in the correct format.","white","on_light_red", attrs=["bold"])
                             print("\n","-"*60)
                             break
                             
@@ -67,7 +67,7 @@ def E_NexaMart():
                 
                 except ValueError:
                     Sound('error')
-                    cprint("Invalid input. Please enter the valid positive number of items.", "red","on_light_red", attrs=["bold"])
+                    cprint("Invalid input. Please enter the valid positive number of items.", "white","on_light_red", attrs=["bold"])
                     print("\n","-"*60)
                     continue
                 
@@ -80,7 +80,7 @@ def E_NexaMart():
                     Sound('success')
                 else:
                     Sound('error')
-                    cprint("Your cart is empty. Please Choice 1 to add Items.", "red","on_light_red", attrs=["bold"])
+                    cprint("Your cart is empty. Please Choice 1 to add Items.", "white","on_light_red", attrs=["bold"])
                     print("\n","-"*60)
                     continue
             case 3:
@@ -90,7 +90,7 @@ def E_NexaMart():
 
                 else:
                     Sound('error')
-                    cprint("Your cart is empty. Please Choice 1 to add Items.", "red","on_light_red", attrs=["bold"])
+                    cprint("Your cart is empty. Please Choice 1 to add Items.", "white","on_light_red", attrs=["bold"])
                     print("\n","-"*60)
                     continue
             case 4:
@@ -99,12 +99,12 @@ def E_NexaMart():
                     print(colored("Your cart has been saved to a JSON file before exiting.", "yellow", attrs=["bold"]))
                 Sound('success')
                 print("\n")
-                cprint("Exiting the E-Commerce Cart System. Thank you!", "red","on_light_red", attrs=["bold"])
+                cprint("Exiting the E-Commerce Cart System. Thank you!", "white","on_light_red", attrs=["bold"])
                 print("\n","-"*60)
                 break
                     
             case _:
-                cprint("Invalid choice. Please try again.", "red","on_light_red", attrs=["bold"])
+                cprint("Invalid choice. Please try again.", "white","on_light_red", attrs=["bold"])
                 print("\n","-"*60)
     
 
